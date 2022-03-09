@@ -9,6 +9,7 @@ namespace VendingMachin.Model
         public int id { get; }
         public string name { get; set; }
         public decimal costproduct { get; set; }
+        public string information { get; set; }
 
         public Product(int Id)
         {

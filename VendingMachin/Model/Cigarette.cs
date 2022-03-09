@@ -6,7 +6,7 @@ namespace VendingMachin.Model
 {
    public  class Cigarette : Product
     {
-        String brand { get; set; }
+         public  String brand { get; set; }
         
         public Cigarette (int id , string name, int costproduct,string Brand):base(id, name , costproduct )
         {
@@ -16,7 +16,7 @@ namespace VendingMachin.Model
 
         public override string Examine()
         {
-            
+            return $"Brand:{ brand } Instruction:{information }";
         }
 
         public override string Use()
