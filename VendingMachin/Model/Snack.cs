@@ -6,20 +6,34 @@ namespace VendingMachin.Model
 {
     class Snack : Product
     {
-        String categori { get; set; }
+       public  String category { get; set; }
 
-        public Snack(int Id, string Name, int Costproduct, string Categori) : base(Id, Name, Costproduct)
+        public Snack(int Id, string Name, int Price, string Information, string Category) : base(Id, Name, Price, Information)
         {
-            Categori =categori ;
+            Category =category ;
         }
+
+        
         public override string Examine()
         {
-            throw new NotImplementedException();
+            return $" Products Name:{name }- Price: {price }-The Category of the snack: {category }";
         }
 
         public override string Use()
         {
-            throw new NotImplementedException();
+            VendingMachinService vendingMachin = new VendingMachinService();
+            foreach (Product product in vendingMachin.storage)
+            {
+
+              
+
+                if (vendingMachin.Purchase(id) != null)
+                {
+                    return $"Instruction:{information}";
+
+                }
+            }
+            return null;
         }
     }
 }

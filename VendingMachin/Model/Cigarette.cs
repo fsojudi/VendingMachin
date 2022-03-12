@@ -8,7 +8,8 @@ namespace VendingMachin.Model
     {
          public  String brand { get; set; }
         
-        public Cigarette (int id , string name, int costproduct,string Brand):base(id, name , costproduct )
+        
+        public Cigarette (int Id , string Name, int Price, string Information, string Brand):base(Id, Name  , Price, Information)
         {
             Brand = brand;
         }
@@ -16,12 +17,24 @@ namespace VendingMachin.Model
 
         public override string Examine()
         {
-            return $"Brand:{ brand } Instruction:{information }";
+            return $"Products Name:{name }- Price: {price }-Brand:{ brand } ";
         }
 
         public override string Use()
         {
-            
+            VendingMachinService vendingMachin = new VendingMachinService();
+            foreach (Product product in vendingMachin.storage)
+            {
+
+               
+
+                if (vendingMachin.Purchase(id) != null)
+                {
+                    return $"Instruction:{information}";
+
+                }
+            }
+            return null;
         }
     }
 }

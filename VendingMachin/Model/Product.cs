@@ -8,7 +8,7 @@ namespace VendingMachin.Model
     {
         public int id { get; }
         public string name { get; set; }
-        public decimal costproduct { get; set; }
+        public int price { get; set; }
         public string information { get; set; }
 
         public Product(int Id)
@@ -21,11 +21,11 @@ namespace VendingMachin.Model
         }
 
 
-        public Product(int Id, string Name, decimal Costproduct):this(Id,Name)
+        public Product(int Id, string Name, int Price,string  Information):this(Id,Name)
         {
-           
-            Name = name;
-            Costproduct = costproduct;
+
+            Information = information;
+            Price = price;
         }
 
         public  abstract  string Examine();

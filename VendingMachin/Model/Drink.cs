@@ -8,19 +8,38 @@ namespace VendingMachin.Model
     {
         public bool hotDrink { get; set; }
 
-        public Drink(int id, string name, int costproduct, bool HotDrink) : base(id, name, costproduct)
+        public Drink(int id, string name, int price, string  Information, bool HotDrink) : base(id, name, price, Information )
         {
            HotDrink = hotDrink;
         }
 
         public override string Examine()
         {
-            throw new NotImplementedException();
+            hotDrink = false;
+            if (hotDrink == true)
+            {
+                return $"Products Name:{name }- Price: {price }-Type of Drink: Hot Drink";
+            }
+            else 
+                return $"Products Name:{name }- Price: {price }-Type of Drink: Cold Drink";
         }
+
 
         public override string Use()
         {
-            throw new NotImplementedException();
+            VendingMachinService vendingMachin = new VendingMachinService();
+            foreach (Product product in vendingMachin.storage)
+            {
+
+               
+
+                if (vendingMachin.Purchase(id) != null)
+                {
+                    return $"Instruction:{information}";
+
+                }
+            }
+            return null;
         }
     }
 }

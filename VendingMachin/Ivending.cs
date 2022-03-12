@@ -11,7 +11,7 @@ namespace VendingMachin
 
         List<string>ShowAll(List<Product> produktList);
 
-        string Details(string info);
+        string Details(Product product);
 
         void InsertMoney();
 
