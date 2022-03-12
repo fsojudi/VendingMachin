@@ -4,13 +4,13 @@ using System.Text;
 
 namespace VendingMachin.Model
 {
-    class Snack : Product
+     public class Snack : Product
     {
        public  String category { get; set; }
 
         public Snack(int Id, string Name, int Price, string Information, string Category) : base(Id, Name, Price, Information)
         {
-            Category =category ;
+            category =Category ;
         }
 
         

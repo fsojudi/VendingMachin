@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VendingMachin.Model
 {
-    class Drink:Product 
+   public  class Drink:Product 
     {
         public bool hotDrink { get; set; }
 

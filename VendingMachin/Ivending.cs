@@ -5,17 +5,17 @@ using VendingMachin.Model;
 
 namespace VendingMachin
 {
-   public  interface Ivending
+   public  interface IVending
     {
-        void Purchase(int Id);
+        Product Purchase(int Id);
 
-        List<string>ShowAll(List<Product> produktList);
+        List<Product>ShowAll();
 
-        string Details(Product product);
+        string Details(Product selctedproduct);
 
-        void InsertMoney();
+        void InsertMoney(int payment);
 
-        Dictionary<int, int> EndTransaction();
+        public Dictionary<int, int> Pending(Product product);
 
 
 

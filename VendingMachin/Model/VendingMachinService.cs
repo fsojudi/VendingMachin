@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VendingMachin.Model
 {
-   public  class VendingMachinService : IVending
+   public  class VendingMachinService :IVending
     {
         public List <Product> storage=new List <Product>();
 
@@ -147,10 +147,15 @@ namespace VendingMachin.Model
 
                 foreach (int kron in moneyArray)
                 {
-                    if (payment == kron)
+                    if (kron == payment)
+                    {
                         moneyPool.Add(payment);
+                    }
+
                     else
-                        throw new ArgumentException("The inserted Money is not Valid .");
+                    {
+                        throw new Exception("The inserted Money is not Valid .");
+                    }
 
                 }
             }
@@ -175,5 +180,7 @@ namespace VendingMachin.Model
             }
             return null;
         }
+
+       
     }
 }

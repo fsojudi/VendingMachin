@@ -6,26 +6,33 @@ namespace VendingMachin.Model
 {
     public abstract class Product
     {
-        public int id { get; }
+        private readonly int Id;
+        public  int id { get { return Id; } }
         public string name { get; set; }
         public int price { get; set; }
         public string information { get; set; }
 
+        public Product() { }
         public Product(int Id)
         {
-            Id = id;
+           this.Id  = Id;
         }
         public Product(int Id, string Name):this (Id)
         {
-            Name = name; 
+            name = Name; 
         }
 
 
-        public Product(int Id, string Name, int Price,string  Information):this(Id,Name)
+        public Product(int Id, string Name, int Price):this(Id,Name)
         {
 
-            Information = information;
-            Price = price;
+            
+            price = Price;
+        }
+        public Product(int Id, string Name, int Price, string Information) : this(Id, Name,Price)
+        {
+            information = Information;
+       
         }
 
         public  abstract  string Examine();
