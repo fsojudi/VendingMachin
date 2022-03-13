@@ -7,7 +7,7 @@ namespace VendingMachin
 {
    public  interface IVending
     {
-        Product Purchase(int Id);
+        Product Purchase(int Id, int payment);
 
         List<Product>ShowAll();
 

@@ -126,7 +126,7 @@ namespace VendingMachin.Model
         {
             foreach (Product  product in storage )
             {
-                if (Purchase (product .id )!=null)
+                if (Purchase (product .id, payment  )!=null)
 
                  return Pending(product );
 
@@ -165,12 +165,12 @@ namespace VendingMachin.Model
         }
 
         // Buy the Product with Id
-        public Product Purchase(int Id)
+        public Product Purchase(int Id, int payment)
         {
             foreach (Product product in storage)
             {
                
-                if (payment >= product.price)
+                if (product .id ==Id && payment > product.price)
                 {
                     
                     return product;

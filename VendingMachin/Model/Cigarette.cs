@@ -28,7 +28,7 @@ namespace VendingMachin.Model
 
                
 
-                if (vendingMachin.Purchase(id) != null)
+                if (vendingMachin.Purchase(id,vendingMachin .payment  ) != null)
                 {
                     return $"Instruction:{information}";
 

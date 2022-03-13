@@ -103,11 +103,47 @@ namespace VendingMachin.Tests.Model
             //Assert
             Assert.Contains(payment, service.moneyPool);
 
+        }
+        /*public Product Purchase(int Id)
+        {
+            foreach (Product product in storage)
+            {
+               
+                if (payment >= product.price)
+                {
+                    
+                    return product;
+                }
+                
+                    
+            }
+            return null;
+        }/*/
+
+        [Fact ]
+        public void PurchaseTests()
+        {
+            int id = 5;
+            string name = "Soft";
+            int price = 25;
+            string information = "put the cup on the counter!";
+            bool HotDrink = false;
+            int payment = 50;
+            
+            Drink drink = new Drink(id , name, price, information, HotDrink);
+            
+            
+            VendingMachinService service = new VendingMachinService();
 
             
+           Product result = service.Purchase(id,payment);
+
+            Assert.Equal(drink, result);
 
 
         }
+       
+
 
     }
 }
